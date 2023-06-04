@@ -1,13 +1,16 @@
+from loggin import ExceptionLogger
 from manager.set_manager import SetManager
 from model.writing_desk import WritingDesk
 from model.coffee_table import CoffeTable
 from manager.desk_manager import DeskManager
 from utils import test_snake_case
 
-
+@ExceptionLogger(Exception, 'file')
 @test_snake_case
 def snake_case():
     print("snake case")
+
+@ExceptionLogger(Exception, 'file')
 @test_snake_case
 def camelCase():
     print("camel case")
@@ -32,3 +35,8 @@ if __name__ == '__main__':
 
     snake_case()
     camelCase()
+    manager.list_of_result_heights()
+    manager.list_of_result_heights()
+    manager.list_of_result_heights()
+    manager.list_of_result_heights()
+    manager.list_of_result_heights()
