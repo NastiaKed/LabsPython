@@ -1,3 +1,4 @@
+from loggin import ExceptionLogger
 from model import desk
 from utils import limiter
 
@@ -52,6 +53,7 @@ class DeskManager:
         """
         return [(desk.__str__(), index) for index, desk in enumerate(self.desks)]
 
+    @ExceptionLogger(Exception, 'console')
     @limiter(3)
     def list_of_result_heights(self):
         """
