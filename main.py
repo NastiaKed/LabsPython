@@ -1,6 +1,16 @@
+from manager.set_manager import SetManager
 from model.writing_desk import WritingDesk
 from model.coffee_table import CoffeTable
 from manager.desk_manager import DeskManager
+from utils import test_snake_case
+
+
+@test_snake_case
+def snake_case():
+    print("snake case")
+@test_snake_case
+def camelCase():
+    print("camel case")
 
 
 if __name__ == '__main__':
@@ -13,5 +23,12 @@ if __name__ == '__main__':
     manager.add_desk(CoffeTable(3, True, 100, 100, 180))
     manager.add_desk(CoffeTable(2, False, 40, 100, 180))
 
-    for desk in manager.get_desks():
-        print(id(desk), desk)
+    a = manager.enumerate_list()
+    for i in a:
+        print(i)
+
+    for i in SetManager(manager):
+        print(i)
+
+    snake_case()
+    camelCase()
